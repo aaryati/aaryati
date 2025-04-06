@@ -214,6 +214,12 @@ h6,
     }
 }
 
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 80px !important; /* Adjust the height for smaller screens */
+    }
+}
+
 
 /*** Carousel ***/
 .carousel-caption {
@@ -221,7 +227,7 @@ h6,
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(9, 30, 62, .7);
+    background: rgb(0 13 32);
     z-index: 1;
 }
 
@@ -232,8 +238,8 @@ h6,
     }
 
     .carousel-caption h1 {
-        font-size: 30px;
-        font-weight: 600 !important;
+        font-size: 22px;
+        font-weight: 400 !important;
     }
 }
 
@@ -489,4 +495,13 @@ h6,
     .footer-about {
         margin-bottom: -75px;
     }
+   
+   
+}
+
+/* Prevent the div from shrinking */
+.bg-white.d-flex.align-items-center.justify-content-center.rounded.mb-2 {
+    flex-shrink: 0; /* Prevents the div from shrinking */
+    width: 100px; /* Set a fixed width (adjust as needed) */
+    height: 100px; /* Set a fixed height (adjust as needed) */
 }
