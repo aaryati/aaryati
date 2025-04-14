@@ -254,6 +254,18 @@ h6,
     height: 3rem;
 }
 
+@media (max-width: 768px) {
+    .carousel-control-next-icon {
+        display: none; /* Hides the next icon in responsive mode */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-control-prev-icon {
+        display: none; /* Hides the next icon in responsive mode */
+    }
+}
+
 
 /*** Section Title ***/
 .section-title::before {
@@ -504,4 +516,12 @@ h6,
     flex-shrink: 0; /* Prevents the div from shrinking */
     width: 100px; /* Set a fixed width (adjust as needed) */
     height: 100px; /* Set a fixed height (adjust as needed) */
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #04DBEC,rgb(91, 142, 243),rgb(79, 79, 230),rgb(46, 46, 231)); /* Define your gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text itself transparent */
+    background-clip: text; /* For non-webkit browsers */
+    text-fill-color: transparent; /* For non-webkit browsers */
 }
