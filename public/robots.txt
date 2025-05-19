@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Allow all web crawlers to access all content 
+# Replace with specific rules if needed in the future
+
+Sitemap: https://aaryati.com/sitemap.xml
