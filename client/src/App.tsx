@@ -21,7 +21,7 @@ function App() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/platform" component={Platform} />
-          <Route path="/platform/mulesoft-conversion" component={MulesoftConversion} />
+          <Route path="/platform/mulesoft-to-springboot-conversion" component={MulesoftConversion} />
           <Route path="/solutions/enterprise" component={Enterprise} />
           <Route path="/solutions/financial-services" component={FinancialServices} />
           <Route path="/resources" component={Resources} />
