@@ -14,7 +14,7 @@ const navItems = [
     label: 'Product',
     href: '#',
     items: [
-      { label: 'Mulesoft to Springboot', href: '/platform/mulesoft-conversion' },
+      { label: 'Mulesoft to Springboot', href: '/platform/mulesoft-to-springboot-conversion' },
     ],
   },
   {

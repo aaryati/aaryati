@@ -11,7 +11,7 @@ const footerLinks = [
   {
     title: "Platform",
     links: [
-      { label: "Mulesoft Conversion", href: "#mulesoft-conversion" },
+      { label: "Mulesoft Conversion", href: "#mulesoft-to-springboot-conversion" },
       { label: "Code Migration", href: "#code-migration" },
       { label: "Integration", href: "#integration" },
       { label: "Connectors", href: "#connectors" },
