@@ -1,7 +1,4 @@
 User-agent: *
-Allow: /
-
-# Allow all web crawlers to access all content 
-# Replace with specific rules if needed in the future
+Disallow:
 
 Sitemap: https://aaryati.com/sitemap.xml
