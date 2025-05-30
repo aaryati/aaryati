@@ -6,12 +6,12 @@ import path from "path";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Serve static files for SEO
   app.get('/robots.txt', (req, res) => {
-    const robotsPath = path.resolve(import.meta.dirname, '..', 'dist/public', 'robots.txt');
+    const robotsPath = path.resolve(import.meta.dirname, '..', 'public', 'robots.txt');
     res.sendFile(robotsPath);
   });
 
   app.get('/sitemap.xml', (req, res) => {
-    const sitemapPath = path.resolve(import.meta.dirname, '..', 'dist/public', 'sitemap.xml');
+    const sitemapPath = path.resolve(import.meta.dirname, '..', 'public', 'sitemap.xml');
     res.sendFile(sitemapPath);
   });
 
