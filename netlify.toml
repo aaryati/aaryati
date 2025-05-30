@@ -9,10 +9,10 @@
 
 [[redirects]]
   from = "/sitemap.xml"
-  to = "/sitemap.xml"
+  to = "public/sitemap.xml"
   status = 200
 
 [[redirects]]
   from = "/robots.txt"
-  to = "/robots.txt"
+  to = "public/robots.txt"
   status = 200
