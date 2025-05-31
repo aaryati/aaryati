@@ -14,7 +14,6 @@ const Home = () => {
     <>
       <Helmet>
         <title>Aaryati Technologies - Mulesoft to Spring Boot Conversion</title>
-        <meta name="description" content="Transform your MuleSoft applications to Spring Boot with our automated conversion platform. Our industry-leading solution ensures a smooth migration with minimal manual intervention." />
       </Helmet>
       
       <motion.div
