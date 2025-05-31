@@ -12,6 +12,7 @@ import Resources from "@/pages/Resources";
 import Company from "@/pages/Company";
 import ContactUs from "@/pages/ContactUs";
 import RequestDemo from "@/pages/RequestDemo";
+import ApiIntegrationRethink2025 from "@/pages/Blog/ApiIntegrationRethink2025";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Route path="/resources" component={Resources} />
           <Route path="/company" component={Company} />
           <Route path="/contact" component={ContactUs} />
-          <Route path="/request-demo" component={RequestDemo} />
+          <Route path="/blog/api-integration-rethink-2025" component={ApiIntegrationRethink2025} />
           <Route component={NotFound} />
         </Switch>
       </main>
