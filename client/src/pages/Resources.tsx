@@ -377,6 +377,14 @@ const Resources = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
+                title: "Why API-Led Integration Needs a Modern Rethink in 2025",
+                date: "January 27, 2025",
+                author: "Aaryati Technologies",
+                excerpt: "Exploring why traditional API-led integration approaches need to evolve for modern cloud-native and microservices architectures.",
+                category: "Strategy",
+                link: "/blog/api-integration-rethink-2025"
+              },
+              {
                 title: "5 Reasons to Migrate from Mulesoft to Spring Boot in 2025",
                 date: "May 5, 2025",
                 author: "Sarah Johnson",
@@ -418,7 +426,7 @@ const Resources = () => {
                   <p className="text-sm text-gray-500">By {post.author}</p>
                 </div>
                 <Button variant="link" className="p-0 h-auto text-blue-600 hover:text-blue-800 font-medium group" asChild>
-                  <Link href={`#blog-${index + 1}`}>
+                  <Link href={post.link || `#blog-${index + 1}`}>
                     <span>Read more</span>
                     <FaArrowRight className="ml-2 h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </Link>
