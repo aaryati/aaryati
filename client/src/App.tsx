@@ -29,6 +29,7 @@ function App() {
           <Route path="/company" component={Company} />
           <Route path="/contact" component={ContactUs} />
           <Route path="/blog/api-integration-rethink-2025" component={ApiIntegrationRethink2025} />
+          <Route path="/request-demo" component={RequestDemo} />
           <Route component={NotFound} />
         </Switch>
       </main>
