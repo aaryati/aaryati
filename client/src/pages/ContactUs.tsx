@@ -317,11 +317,11 @@ const ContactUs = () => {
                 <div className="max-w-md mx-auto">
                   <h3 className="text-xl font-semibold mb-2">Our Location</h3>
                   <p className="text-gray-400 mb-4">
-                    Our headquarters is located in the heart of Silicon Valley, California.
+                    Our headquarters is located in Kharadi, Pune, India.
                   </p>
                   <div className="inline-flex items-center text-primary">
                     <FaMapMarkerAlt className="mr-2" />
-                    <span>123 Tech Park, Silicon Valley, CA</span>
+                    <span>Behind Zensar IT Park, Pune</span>
                   </div>
                 </div>
               </div>

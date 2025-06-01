@@ -190,19 +190,19 @@ const Company = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <TeamMember 
-              name="Priya Sharma"
-              role="CEO & Co-Founder"
+              name="Sanjivani Ghuge"
+              role="CEO & Founder"
               image="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-              linkedIn="#linkedin-priya"
+              linkedIn="https://www.linkedin.com/in/sanjivani-ghuge/"
             />
             <TeamMember 
-              name="David Rodriguez"
-              role="CTO & Co-Founder"
+              name="Aarti Ghuge"
+              role="Co-Founder"
               image="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
               linkedIn="#linkedin-david"
             />
             <TeamMember 
-              name="Sarah Johnson"
+              name="Dhanashri Dole"
               role="VP of Customer Success"
               image="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
               linkedIn="#linkedin-sarah"
