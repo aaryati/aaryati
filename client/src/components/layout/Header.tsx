@@ -98,12 +98,12 @@ const DesktopNavItem: React.FC<{ item: any }> = ({ item }) => {
                     if (subItem.href.includes('#')) {
                       const isCompanyLink = subItem.href.includes('/company#') || (location === '/company' && subItem.href.includes('#'));
                       const isResourcesLink = subItem.href.includes('/resources#') || (location === '/resources' && subItem.href.includes('#'));
-                      
+
                       if (isCompanyLink || isResourcesLink) {
                         e.preventDefault();
                         const sectionId = subItem.href.split('#')[1];
                         const element = document.getElementById(sectionId);
-                        
+
                         if (element) {
                           element.scrollIntoView({ behavior: 'smooth' });
                         } else if (subItem.href.includes('/')) {
@@ -164,22 +164,33 @@ const Header = () => {
                 </div>
               </Link>
             </div>
-            
+
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {navItems.map((item, idx) => (
                 <DesktopNavItem key={idx} item={item} />
               ))}
+              <Link 
+                href="/mule-to-springboot-converter-api-analyzer" 
+                className={cn(
+                  "inline-flex items-center px-4 py-2 transition-colors",
+                  location === "/mule-to-springboot-converter-api-analyzer" 
+                    ? "text-primary font-medium" 
+                    : "text-gray-300 hover:text-white"
+                )}
+              >
+                Mule Analyzer
+              </Link>
             </nav>
           </div>
-          
+
           <div className="flex items-center space-x-3">
             <Button variant="default" className="rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white transition-colors" asChild>
               <Link href="/request-demo" className="flex items-center">
                 <span>Get a Demo</span>
               </Link>
             </Button>
-            
+
             {/* Mobile menu button */}
             <Sheet>
               <SheetTrigger asChild>
@@ -200,7 +211,7 @@ const Header = () => {
                       </Button>
                     </SheetClose>
                   </div>
-                
+
                   <div className="flex-1 overflow-y-auto py-2">
                     <Accordion type="single" collapsible className="w-full">
                       {navItems.map((item, idx) => (
@@ -241,12 +252,12 @@ const Header = () => {
                                           if (subItem.href.includes('#')) {
                                             const isCompanyLink = subItem.href.includes('/company#') || (location === '/company' && subItem.href.includes('#'));
                                             const isResourcesLink = subItem.href.includes('/resources#') || (location === '/resources' && subItem.href.includes('#'));
-                                            
+
                                             if (isCompanyLink || isResourcesLink) {
                                               e.preventDefault();
                                               const sectionId = subItem.href.split('#')[1];
                                               const element = document.getElementById(sectionId);
-                                              
+
                                               if (element) {
                                                 element.scrollIntoView({ behavior: 'smooth' });
                                               } else if (subItem.href.includes('/')) {
@@ -290,9 +301,27 @@ const Header = () => {
                           </div>
                         )
                       ))}
+                      
+                      {/* Mule Analyzer link for mobile */}
+                      <div className="border-b border-accent/10">
+                        <SheetClose asChild>
+                          <Link 
+                            href="/mule-to-springboot-converter-api-analyzer" 
+                            className={cn(
+                              "flex px-4 py-3 hover:text-white w-full",
+                              location === "/mule-to-springboot-converter-api-analyzer" 
+                                ? "text-primary font-medium" 
+                                : "text-gray-300"
+                            )}
+                          >
+                            Mule Analyzer
+                            <FiChevronRight className="ml-auto opacity-60" />
+                          </Link>
+                        </SheetClose>
+                      </div>
                     </Accordion>
                   </div>
-                  
+
                   <div className="border-t border-accent/20 p-4 space-y-3">
                     <SheetClose asChild>
                       <Button className="w-full text-sm rounded-md bg-slate-800 hover:bg-slate-700 text-white" asChild>

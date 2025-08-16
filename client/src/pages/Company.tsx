@@ -274,16 +274,19 @@ const Company = () => {
             <p className="text-xl mb-10 text-gray-300">
               We're always looking for talented individuals who are passionate about innovation and solving complex problems.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="h-12 px-6 text-sm font-medium rounded-md bg-blue-500 hover:bg-blue-600 group" asChild>
-                <Link href="#careers">
-                  <span>View Open Positions</span>
-                  <FaArrowRight className="ml-2 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              <Button variant="outline" className="h-12 px-6 text-sm font-medium rounded-md border-blue-500/40 bg-blue-500/10 text-blue-100 hover:bg-blue-500/20 hover:text-white transition-colors group" asChild>
-                <Link href="#our-culture">Learn About Our Culture</Link>
-              </Button>
+            <div className="text-center">
+              <p className="text-lg text-gray-300 mb-4">
+                Interested in joining our team?
+              </p>
+              <div className="bg-blue-500/20 border border-blue-500/30 rounded-lg p-6 inline-block">
+                <p className="text-blue-200 mb-2">Contact us at:</p>
+                <a 
+                  href="mailto:contact@aaryati.com" 
+                  className="text-xl font-semibold text-blue-300 hover:text-white transition-colors"
+                >
+                  contact@aaryati.com
+                </a>
+              </div>
             </div>
           </div>
         </div>
