@@ -4,18 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-        ]
-      : []),
-  ],
+  plugins: [react(), runtimeErrorOverlay()],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -27,6 +16,28 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    sourcemap: false, // Disable sourcemaps in production to reduce memory usage
+    minify: "esbuild",
+    cssMinify: "esbuild",
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: (id) => {
+          // More granular chunk splitting
+          if (id.includes('node_modules')) {
+            if (id.includes('react')) {
+              return 'react-vendor';
+            }
+            if (id.includes('@tanstack') || id.includes('react-query')) {
+              return 'query-vendor';
+            }
+            return 'vendor'; // Other node_modules
+          }
+        },
+      },
+    },
+    target: 'esnext', // Modern browsers only for smaller bundle
+    assetsInlineLimit: 4096, // Inline smaller assets
   },
   publicDir: path.resolve(import.meta.dirname, "public"),
 });

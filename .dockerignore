@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.esbuild
+.vite
+.next
+.turbo
+.git
+.gitignore
+Dockerfile
+.dockerignore
