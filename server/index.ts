@@ -6,7 +6,7 @@ import { log } from "./utils";
 async function startServer() {
   const app = express();
   const server = http.createServer(app);
-  const port = process.env.PORT || 3000;
+  const port = process.env.PORT || 3080;
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));

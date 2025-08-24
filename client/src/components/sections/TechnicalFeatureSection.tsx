@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaCheck, FaCode, FaJava, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { Button } from '@/components/ui/button';
@@ -137,7 +137,7 @@ const TechnicalFeatureSection = () => {
   const [activeExample, setActiveExample] = useState(0);
   const [api, setApi] = useState<CarouselApi>();
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (!api) return;
     
     const handleSelect = () => {

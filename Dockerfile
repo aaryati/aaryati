@@ -13,6 +13,7 @@ RUN npm ci
 COPY . .
 
 # Build both client and server
+ENV NODE_ENV=production
 RUN npm run build
 
 # ---------- Runner ----------
@@ -25,8 +26,8 @@ RUN addgroup -g 1001 nodejs && \
 
 # Set production environment
 ENV NODE_ENV=production
-ENV PORT=8080
-EXPOSE 8080
+ENV PORT=3080
+EXPOSE 3080
 
 # Copy built files and dependencies
 COPY --from=builder /app/dist/server ./dist/server
@@ -37,8 +38,8 @@ COPY --from=builder /app/package*.json ./
 RUN npm ci --omit=dev && \
     chown -R nodejs:nodejs /app
 
-# Enable ES modules
-ENV NODE_OPTIONS="--enable-source-maps --experimental-specifier-resolution=node"
+# Enable ES modules and increase memory limit
+ENV NODE_OPTIONS="--enable-source-maps --experimental-specifier-resolution=node --max-old-space-size=4096"
 
 # Switch to non-root user
 USER nodejs
