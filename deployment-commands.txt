@@ -1,0 +1,9 @@
+REGION=asia-south1
+SERVICE=rest-express
+gcloud run deploy $SERVICE \                                                                 
+  --source . \
+  --region $REGION \
+  --allow-unauthenticated
+
+
+REGION=asia-south1 && SERVICE=rest-express && gcloud run deploy $SERVICE --source . --region $REGION --allow-unauthenticated
