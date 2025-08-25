@@ -48,11 +48,34 @@ const RequestDemo = () => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    // In a real implementation, this would send the form data to your backend
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch('/api/submit-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          role: data.role,
+          appSize: data.appSize,
+          requirements: data.requirements,
+        }),
+      });
+
+      if (response.ok) {
     alert('Thank you for requesting a demo! Our team will contact you shortly to schedule your personalized demonstration.');
     form.reset();
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error || 'Failed to submit demo request'}`);
+      }
+    } catch (error) {
+      console.error('Demo request submission error:', error);
+      alert('Failed to submit demo request. Please try again.');
+    }
   };
 
   return (

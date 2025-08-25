@@ -54,11 +54,33 @@ const ContactUs = () => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log(data);
-    // In a real implementation, this would send the form data to your backend
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const response = await fetch('/api/submit-enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          role: data.topic, // Map topic to role for the API
+          requirements: data.message,
+        }),
+      });
+
+      if (response.ok) {
     alert('Thank you for your message! We will get back to you shortly.');
     form.reset();
+      } else {
+        const errorData = await response.json();
+        alert(`Error: ${errorData.error || 'Failed to send message'}`);
+      }
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      alert('Failed to send message. Please try again.');
+    }
   };
 
   return (

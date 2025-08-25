@@ -106,6 +106,44 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Enquiry form API endpoint
+  app.post('/api/submit-enquiry', async (req, res) => {
+    try {
+      const enquiryData = req.body;
+
+      // Validate required fields
+      if (!enquiryData.name || !enquiryData.email) {
+        return res.status(400).json({ error: 'Name and email are required' });
+      }
+
+      // Call the Spring Boot service for enquiry submission
+      const response = await axios.post('https://my-spring-api-1042208607375.asia-south1.run.app/api/v1/inquiry', {
+        name: enquiryData.name,
+        email: enquiryData.email,
+        companyName: enquiryData.company || enquiryData.companyName,
+        yourRole: enquiryData.role || enquiryData.yourRole,
+        applicationSize: enquiryData.appSize || enquiryData.applicationSize,
+        requirements: enquiryData.requirements || enquiryData.message
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout: 30000, // 30 seconds timeout
+      });
+
+      res.json(response.data);
+    } catch (error) {
+      console.error('Enquiry submission error:', error);
+      if (axios.isAxiosError(error)) {
+        const status = error.response?.status || 500;
+        const message = error.response?.data?.message || 'Enquiry service unavailable';
+        res.status(status).json({ error: message });
+      } else {
+        res.status(500).json({ error: 'Internal server error during enquiry submission' });
+      }
+    }
+  });
+
   const httpServer = createServer(app);
 
   return httpServer;
